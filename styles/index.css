@@ -27,6 +27,11 @@
     height: 150px;
 }
 
+.vertcenter
+{
+	padding = 70px;
+}
+
 .firstpart
 {
 	background-color: #66ccff;
