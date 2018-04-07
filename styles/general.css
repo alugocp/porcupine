@@ -19,6 +19,7 @@
   display:none;
 }
 .search-bar input[type=text]{
+  width:90%;
   border:none;
 }
 .search-bar label{
