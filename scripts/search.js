@@ -1,21 +1,22 @@
-function upload(){
-  const name=$("#name").val();
+function search(){
   const lang=$(".languages").val();
   const clientPromise = stitch.StitchClientFactory.create('porcupineapp-dcxhf');
   clientPromise.then(client => {
     const db = client.service('mongodb', 'mongodb-atlas').db('Quills');
     client.login().then(()=>
-      client.executeFunction("add_quill",{name:name,lang:lang})
-    ).then(() =>
-      alert("Upload successful!")
+      client.executeFunction("search_quills",{name:name,lang:lang})
+    ).then((result) =>
+      console.log(result)
     ).catch(err => {
       console.error(err);
     });
   });
 }
 
-$(window).ready(function(){
-  CodeMirror.fromTextArea(codearea,{
-    lineNumbers:true
-  });
-});
+function populate_results(){
+  const results=$("#results");
+
+}
+function new_result(obj){
+
+}
