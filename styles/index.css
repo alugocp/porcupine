@@ -5,9 +5,9 @@
 	border-radius: 25px;
     background-color: #ffffff;
 	text-align: center;
-    padding: 20px; 
+    padding: 20px;
     width: 250px;
-    height: 150px; 
+    height: 150px;
 }
 .hasColoredBG2
 {
@@ -16,9 +16,9 @@
 	border-radius: 25px;
     background-color: #ffffff;
 	text-align: center;
-    padding: 20px; 
+    padding: 20px;
     width: 300px;
-    height: 175px; 
+    height: 175px;
 }
 
 .noBG
@@ -28,9 +28,9 @@
 	border-radius: 25px;
     background-color: #ffcc99;
 	text-align: center;
-    padding: 20px; 
+    padding: 20px;
     width: 200px;
-    height: 150px; 
+    height: 150px;
 }
 
 .firstpart
@@ -56,7 +56,7 @@
 	text-align: center;
 }
 
-div
+/*div
 {
 	height: 400px;
-}
+}*/
