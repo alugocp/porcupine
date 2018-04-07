@@ -7,8 +7,10 @@
   <script src="libs/jquery.min.js"></script><!-- integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>-->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="libs/mongodb-stitch.min.js"></script>
+  <script src="libs/codemirror.js"></script>
   <link rel="stylesheet" href="styles/general.css">
   <link rel="stylesheet" href="styles/upload.css">
+  <link rel="stylesheet" href="libs/codemirror.css">
   <script src="scripts/upload.js"></script>
   <script src="scripts/setup.js"></script>
 </head>
@@ -20,13 +22,8 @@
         <label>Name: </label>
         <input id="name" type="text"></input><br>
         <label>Language: </label>
-        <select id="lang">
-          <!--<option value="C">C</option>
-          <option value="Java">Java</option>
-          <option value="Python">Python</option>
-          <option value="Ruby">Ruby</option>-->
-        </select><br>
-        <textarea></textarea><br>
+        <select id="lang"></select><br>
+        <textarea id="codearea"></textarea><br>
         <span class="upload-button">
           <label for="upload"><h2>Upload</h2></label>
           <input id="upload" type="submit" onclick="upload()"></input>

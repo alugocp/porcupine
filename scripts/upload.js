@@ -15,6 +15,9 @@ function upload(){
 }
 
 $(window).ready(function(){
+  CodeMirror.fromTextArea(codearea,{
+    lineNumbers:true
+  });
   $.get("languages.json",function(languages){
     const lang=$("#lang");
     languages.forEach(function(e){
