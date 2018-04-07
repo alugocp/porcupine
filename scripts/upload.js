@@ -5,7 +5,7 @@ function upload(){
   clientPromise.then(client => {
     const db = client.service('mongodb', 'mongodb-atlas').db('Quills');
     client.login().then(()=>
-      client.executeFunction("add_quill",{name:name,lang:lang})
+      client.executeFunction("add_quill",lang,{name:name,lang:lang})
     ).then(() =>
       alert("Upload successful!")
     ).catch(err => {

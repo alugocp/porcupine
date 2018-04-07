@@ -1,12 +1,13 @@
 function search(){
+  const name=$(".search-bar input[type=text]").val();
   const lang=$(".languages").val();
   const clientPromise = stitch.StitchClientFactory.create('porcupineapp-dcxhf');
   clientPromise.then(client => {
     const db = client.service('mongodb', 'mongodb-atlas').db('Quills');
     client.login().then(()=>
-      client.executeFunction("search_quills",{name:name,lang:lang})
-    ).then((result) =>
-      console.log(result)
+      client.executeFunction("search_quills",{name:name,lang:lang}).then((result)=>
+        console.log(result)
+      )
     ).catch(err => {
       console.error(err);
     });
