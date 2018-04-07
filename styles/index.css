@@ -1,6 +1,11 @@
-﻿.hasColoredBG
+﻿:root{
+  --main-color:#ffbf51;
+  --gray:#d4d4d4;
+}
+
+.hasColoredBG
 {
-	float: left;
+	margin: auto;
     width: 300px;
 	border-radius: 25px;
     background-color: #ffffff;
@@ -9,21 +14,10 @@
     width: 250px;
     height: 150px;
 }
-.hasColoredBG2
-{
-	float: right;
-    width: 300px;
-	border-radius: 25px;
-    background-color: #ffffff;
-	text-align: center;
-    padding: 20px;
-    width: 300px;
-    height: 175px;
-}
 
 .noBG
 {
-	float: left;
+	margin:auto;
     width: 300px;
 	border-radius: 25px;
     background-color: #ffcc99;
@@ -36,24 +30,79 @@
 .firstpart
 {
 	background-color: #66ccff;
-	text-align: left;
+}
+.firstpart1
+{
+	background-color: #66ccff;
+	text-align: right;
+}
+.firstpart2
+{
+	background-color: #66ccff;
+	text-align: center;
+	max-width= 400px;
+	margin: auto;
 }
 
 .secondpart
 {
 	background-color: #ffcc99;
+}
+.secondpart1
+{
+	background-color: #ffcc99;
+	text-align: left;
+}
+.secondpart2
+{
+	background-color: #ffcc99;
+	text-align: center;
+	max-width= 400px;
+	margin: auto;
+}
+.secondpart3
+{
+	background-color: #ffcc99;
 	text-align: right;
 }
+
 
 .thirdpart
 {
 	background-color: #99ff99;
+}
+.thirdpart
+{
+	background-color: #99ff99;
+	text-align: right;
+}
+.thirdpart2
+{
+	background-color: #99ff99;
+	text-align: center;
+	max-width= 400px;
+	margin: auto;
+}
+.part1
+{
 	text-align: left;
+}
+
+.part2
+{
+	text-align: center;
+	max-width= 400px;
+	margin: auto;
 }
 
 .foot
 {
 	text-align: center;
+}
+
+.para
+{
+	font-size: 24px;
 }
 
 /*div
