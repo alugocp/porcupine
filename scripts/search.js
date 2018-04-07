@@ -1,7 +1,8 @@
 $(window).ready(function(){
   var query=localStorage.getItem("pending-query");
-  if(query!=undefined){
+  if(query!=null && query!=undefined){
     search(query,{});
+    delete localStorage["pending-query"];
   }
 })
 
@@ -11,12 +12,13 @@ function search(name,obj){
   const clientPromise = stitch.StitchClientFactory.create('porcupineapp-dcxhf');
   clientPromise.then(client => {
     const db = client.service('mongodb', 'mongodb-atlas').db('Quills');
-    client.login().then(()=>
+    client.login().then(()=>{
+      console.log(query_obj);
       client.executeFunction("search_quills",query_obj).then((result) => {
         console.log(result)
         populate_results([result]);
-      })
-    ).catch(err => {
+      });
+    }).catch(err => {
       console.error(err)
     });
   });
