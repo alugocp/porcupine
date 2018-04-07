@@ -1,0 +1,16 @@
+.upload-field{
+  background-color:var(--gray);
+  border-radius:10px;
+  padding:10px;
+}
+.upload-button input[type=submit]{
+  display:none;
+}
+.upload-button label{
+  padding:5px 5px 3px 3px;
+  border-radius:5px;
+  background-color:var(--main-color);
+  color:white;
+  font-weight:bold;
+  border:solid 1px gray;
+}

@@ -1,0 +1,25 @@
+:root{
+  --main-color:#ffbf51;
+  --gray:#d4d4d4;
+}
+.header{
+  background-color:var(--main-color);
+  padding-bottom:20px;
+  margin-bottom:20px;
+}
+.search-bar{
+  border: solid 3px gray;
+  border-radius:5px;
+  background-color:white;
+}
+.search-bar input[type=submit]{
+  display:none;
+}
+.search-bar input[type=text]{
+  border:none;
+}
+.search-bar label{
+  padding-right:5px;
+  padding-left:5px;
+  border-right:solid 1px black;
+}

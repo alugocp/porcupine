@@ -1,6 +1,6 @@
-$(window).ready(function(){
+$(".header").ready(function(){
   $.get("header.html",function(result){
     $(".header").html(result);
-    console.log(result);
-  },"text");
+    //console.log(result);
+  },"html");
 });
