@@ -1,0 +1,62 @@
+﻿.hasColoredBG
+{
+	float: left;
+    width: 300px;
+	border-radius: 25px;
+    background-color: #ffffff;
+	text-align: center;
+    padding: 20px; 
+    width: 250px;
+    height: 150px; 
+}
+.hasColoredBG2
+{
+	float: right;
+    width: 300px;
+	border-radius: 25px;
+    background-color: #ffffff;
+	text-align: center;
+    padding: 20px; 
+    width: 300px;
+    height: 175px; 
+}
+
+.noBG
+{
+	float: left;
+    width: 300px;
+	border-radius: 25px;
+    background-color: #ffcc99;
+	text-align: center;
+    padding: 20px; 
+    width: 200px;
+    height: 150px; 
+}
+
+.firstpart
+{
+	background-color: #66ccff;
+	text-align: left;
+}
+
+.secondpart
+{
+	background-color: #ffcc99;
+	text-align: right;
+}
+
+.thirdpart
+{
+	background-color: #99ff99;
+	text-align: left;
+}
+
+.foot
+{
+	text-align: center;
+}
+
+div
+{
+	height: 400px;
+}
