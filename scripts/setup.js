@@ -1,0 +1,6 @@
+$(window).ready(function(){
+  $.get("header.html",function(result){
+    $(".header").html(result);
+    console.log(result);
+  },"text");
+});
