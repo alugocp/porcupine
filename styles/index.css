@@ -10,6 +10,8 @@
 	border-radius: 25px;
     background-color: #ffffff;
 	text-align: center;
+	 --border-width:3px;
+	border: solid var(--border-width) gray;
     padding: 20px;
     width: 250px;
     height: 150px;
@@ -22,6 +24,8 @@
 	border-radius: 25px;
     background-color: #ffcc99;
 	text-align: center;
+	--border-width:3px;
+	border: solid var(--border-width) gray;
     padding: 10px;
     width: 200px;
     height: 75px;
@@ -39,7 +43,7 @@
 .firstpart1
 {
 	background-color: #66ccff;
-	text-align: right;
+	text-align: center;
 }
 .firstpart2
 {
@@ -51,16 +55,16 @@
 
 .secondpart
 {
-	background-color: #ffcc99;
+	background-color: solid(--main-color) orangish;
 }
 .secondpart1
 {
-	background-color: #ffcc99;
-	text-align: left;
+	background-color: solid(--main-color) orangish;
+	text-align: center;
 }
 .secondpart2
 {
-	background-color: #ffcc99;
+	background-color: solid(--main-color) orangish;
 	text-align: center;
 	max-width= 400px;
 	margin: auto;
@@ -68,7 +72,7 @@
 .secondpart3
 {
 	background-color: #ffcc99;
-	text-align: right;
+	text-align: center;
 }
 
 
@@ -79,7 +83,7 @@
 .thirdpart
 {
 	background-color: #99ff99;
-	text-align: right;
+	text-align: center;
 }
 .thirdpart2
 {
@@ -90,7 +94,7 @@
 }
 .part1
 {
-	text-align: left;
+	text-align: center;
 }
 
 .part2
