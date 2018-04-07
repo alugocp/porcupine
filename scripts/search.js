@@ -18,5 +18,5 @@ function populate_results(){
 
 }
 function new_result(obj){
-
+  //html.append($("<span>Name: "+obj.name+"</span><br>"))
 }
