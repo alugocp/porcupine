@@ -1,22 +1,21 @@
 $(window).ready(function(){
   var query=localStorage.getItem("pending-query");
   if(query!=null && query!=undefined){
-    search(query,{});
     delete localStorage["pending-query"];
+    search({name:query});
   }
 })
 
-function search(name,obj){
-  obj.name=name;
+function search(obj){
   const query_obj=obj;
   const clientPromise = stitch.StitchClientFactory.create('porcupineapp-dcxhf');
   clientPromise.then(client => {
     const db = client.service('mongodb', 'mongodb-atlas').db('Quills');
     client.login().then(()=>{
       console.log(query_obj);
-      client.executeFunction("search_quills",query_obj).then((result) => {
-        console.log(result)
-        populate_results([result]);
+      client.executeFunction("search_quills",query_obj).then((results) => {
+        console.log(results)
+        populate_results(results);
       });
     }).catch(err => {
       console.error(err)
@@ -24,9 +23,16 @@ function search(name,obj){
   });
 }
 function side_search(){
-  const name=$(".search-field input[type=text]").val();
-  const lang=$(".languages").val();
-  search(name,{lang:lang});
+  var obj={};
+  var field=$(".search-field input[type=text]").val();
+  if(field!=""){
+    obj.name=field;
+  }
+  field=$(".languages").val();
+  if(field!="-Any-"){
+    obj.lang=field;
+  }
+  search(obj);
 }
 
 function populate_results(array){
