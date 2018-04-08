@@ -9,6 +9,12 @@ $(".header").ready(function(){
     })
   },"json");
 });
+$(window).keypress(function(e){
+  if(e.which==13){
+    console.log($(".search-bar label"));
+    $(".search-bar label").trigger("click");
+  }
+});
 
 function basic_search(){
   const name=$(".search-bar input[type=text]").val();

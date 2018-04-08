@@ -6,6 +6,9 @@
 .upload-field #codearea{
   text-align:left;
 }
+.upload-field .row{
+  padding:5px;
+}
 .upload-button input[type=submit]{
   display:none;
 }

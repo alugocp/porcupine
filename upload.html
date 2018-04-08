@@ -3,8 +3,8 @@
 <head>
   <title>Porcupine - Upload</title>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous"><!-- integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"  -->
-  <script src="libs/jquery.min.js"></script><!-- integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+  <script src="libs/jquery.min.js"></script>
   <script src="libs/bootstrap.min.js"></script>
   <script src="libs/mongodb-stitch.min.js"></script>
   <script src="libs/codemirror.js"></script>
@@ -17,17 +17,29 @@
 <body>
   <div class="container-fluid">
     <div class="row header"></div>
-    <div class="row text-center">
+    <div class="row">
       <div class="container upload-field">
-        <label>Name: </label>
-        <input id="name" type="text"></input><br>
-        <label>Language: </label>
-        <select class="languages"></select><br>
-        <textarea id="codearea"></textarea><br>
-        <span class="upload-button">
-          <label for="upload"><h2>Upload</h2></label>
-          <input id="upload" type="submit" onclick="upload()"></input>
-        </span>
+        <div class="row">
+          <div class="col-md-3">
+            <label>Name: </label>
+            <input id="name" type="text"></input><br>
+            <label>Language: </label>
+            <select class="languages"></select><br>
+          </div>
+          <div class="col-md-9">
+            <label>Purpose: </label>
+            <textarea id="purpose"></textarea>
+          </div>
+        </div>
+        <div class="row"><div class="container">
+          <textarea id="codearea"></textarea>
+        </div></div>
+        <div class="row text-center">
+          <span class="upload-button">
+            <label for="upload"><h2>Upload</h2></label>
+            <input id="upload" type="submit" onclick="upload()"></input>
+          </span>
+        </div>
       </div>
     </div>
   </div>
