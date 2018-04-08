@@ -4,3 +4,19 @@
   margin-left:5px;
   padding:7px;
 }
+.result{
+  background-color:var(--gray);
+  border-radius:5px;
+  padding:7px;
+  margin-bottom:10px;
+}
+.result:hover{
+  /*border:solid 1px var(--main-color);*/
+  box-shadow:0px 0px 4px var(--main-color);
+}
+.alternate{
+  background-color:var(--lighter);
+}
+.result .topic{
+  font-weight:bold;
+}

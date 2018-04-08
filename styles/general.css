@@ -1,6 +1,7 @@
 :root{
   --main-color:#ffbf51;
   --gray:#d4d4d4;
+  --lighter:#ededed;
 }
 .header{
   background-color:var(--main-color);
@@ -51,6 +52,7 @@
 }
 .search-bar label:hover{
   background-color:var(--gray);
+  cursor:pointer;
 }
 
 .glyphicon-upload{

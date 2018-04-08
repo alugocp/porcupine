@@ -4,7 +4,7 @@ $(window).ready(function(){
     delete localStorage["pending-query"];
     search({name:query});
   }
-})
+});
 
 function search(obj){
   const query_obj=obj;
@@ -38,16 +38,27 @@ function side_search(){
 function populate_results(array){
   const results=$("#results");
   results.empty();
-  array.forEach(function(current){
-	   results.append(new_result(current));
-  });
+  if(array.length==0){
+    results.append(empty_result());
+  }else{
+    for(var a=0;a<array.length;a++){
+      results.append(new_result(array[a],a%2==0));
+    }
+  }
 }
 
-function new_result(obj){
-	var html=$("<div>");
-	html.append($("<span>Name: "+obj.name+"</span><br>"));
-	html.append($("<span>Lang: "+obj.lang+"</span><br>"));
-	html.append($("<span>Purpose: " +obj.purpose+"</span><br>"));
-	html.append($("<span>Preview: " + obj.preview+"</span>"));
+function new_result(obj,is_even){
+	var html=$("<div class=\"row result\">");
+  if(is_even){html.addClass("alternate");}
+	html.append($("<span class=\"topic\">Name:</span> "+obj.name+"<br>"));
+	html.append($("<span class=\"topic\">Language:</span> "+obj.lang+"<br>"));
+	html.append($("<span class=\"topic\">Purpose:</span> " +obj.purpose+"<br>"));
+  html.append($("<span class=\"topic\">Previews:</span> coming soon"));
+  return html;
+}
+function empty_result(){
+  var html=$("<div class=\"row result text-center alternate\">");
+  html.append("<span class=\"topic\">No results</span><br>");
+  html.append("<span>Maybe you should fix that ;)</span>");
   return html;
 }
