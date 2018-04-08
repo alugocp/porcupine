@@ -1,10 +1,8 @@
 var json_objects;
 $(window).ready(function(){
   var query=localStorage.getItem("pending-query");
-  if(query!=null && query!=undefined){
-    delete localStorage["pending-query"];
-    search(query==""?{}:{name:query});
-  }
+  delete localStorage["pending-query"];
+  search((query=="" || query==null || query==undefined)?{}:{name:query});
 });
 
 function search(obj){
@@ -13,9 +11,7 @@ function search(obj){
   clientPromise.then(client => {
     const db = client.service('mongodb', 'mongodb-atlas').db('Quills');
     client.login().then(()=>{
-      console.log(query_obj);
       client.executeFunction("search_quills",query_obj).then((results) => {
-        console.log(results);
         populate_results(results);
       });
     }).catch(err => {
@@ -56,16 +52,23 @@ function populate_results(array){
 function new_result(obj,index){
 	var html=$("<div class=\"row result\">");
   if(index%2==0){html.addClass("alternate");}
-  var left=$("<div class=\"col-md-8\">");
+  var left=$("<div class=\"col-md-6\">");
 	left.append($("<span class=\"topic\">Name:</span> "+obj.name+"<br>"));
 	left.append($("<span class=\"topic\">Language:</span> "+obj.lang+"<br>"));
 	left.append($("<span class=\"topic\">Purpose:</span> " +obj.purpose+"<br>"));
   left.append($("<span class=\"topic\">Previews:</span> coming soon<br>"));
   left.append($("<a onclick=\"view("+index+")\">View</a>"));
   html.append(left);
-  var right=$("<div class=\"col-md-4\">");
+  var middle=$("<div class=\"col-md-4\">");
+  var voting=$("<span>");
+  for(var a=0;a<4;a++){
+    voting.append(vote_option(a,index));
+  }
+  middle.append(voting);
+  html.append(middle);
+  var right=$("<div class=\"col-md-2 text-right\">");
   right.append($("<img class=\"rating\" src=\"images/"+get_face(obj.score)+".png\"></img><br>"));
-  right.append($("<span class=\"topic\">"+(obj.ratings | 0)+" ratings</span>"));
+  right.append($("<br><span class=\"topic\">"+(obj.ratings | 0)+" ratings</span>"));
   html.append(right);
   return html;
 }
@@ -75,10 +78,32 @@ function empty_result(){
   html.append("<span>Maybe you should <a href=\"upload.html\">fix that</a></span>");
   return html;
 }
+function vote_option(face,index){
+  var option=$("<img class=\"rating vote-option\" src=\"images/"+get_face(face)+".png\"></img>");
+  option.click(function(){
+    vote(index,face);
+    $(this).parent().hide();
+  });
+  return option;
+}
 function get_face(index){
   if(index==undefined){
-    return "mwuhahaha";
+    return "no";
   }
   var faces=["mad","meh","average","smiley"];
   return faces[Math.round(index)];
+}
+function vote(index,rating){
+  const obj=as_filter(json_objects[index]);
+  const clientPromise = stitch.StitchClientFactory.create('porcupineapp-dcxhf');
+  clientPromise.then(client => {
+    const db = client.service('mongodb', 'mongodb-atlas').db('Quills');
+    client.login().then(()=>{
+      client.executeFunction("rate_quill",obj,rating).then(() => {
+        alert("Thank you for voting");
+      });
+    }).catch(err => {
+      console.error(err)
+    });
+  });
 }

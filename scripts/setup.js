@@ -20,3 +20,10 @@ function basic_search(){
   localStorage.setItem("pending-query",$(".search-bar input[type=text]").val());
   window.location.href="search.html";
 }
+function as_filter(quill){
+  var filter={};
+  filter.name=quill.name;
+  filter.lang=quill.lang;
+  filter.purpose=quill.purpose;
+  return filter;
+}
