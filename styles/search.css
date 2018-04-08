@@ -1,4 +1,6 @@
 .search-field{
   background-color:var(--gray);
   border-radius:5px;
+  margin-left:5px;
+  padding:7px;
 }

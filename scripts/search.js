@@ -47,7 +47,7 @@ function new_result(obj){
 	var html=$("<div>");
 	html.append($("<span>Name: "+obj.name+"</span><br>"));
 	html.append($("<span>Lang: "+obj.lang+"</span><br>"));
-	html.append($("<span>Purpose: " +obj.desc+"</span><br>"));
+	html.append($("<span>Purpose: " +obj.purpose+"</span><br>"));
 	html.append($("<span>Preview: " + obj.preview+"</span>"));
   return html;
 }
