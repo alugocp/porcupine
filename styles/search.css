@@ -20,3 +20,6 @@
 .result .topic{
   font-weight:bold;
 }
+.result a{
+  color:var(--darker);
+}

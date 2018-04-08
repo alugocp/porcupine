@@ -59,6 +59,6 @@ function new_result(obj,is_even){
 function empty_result(){
   var html=$("<div class=\"row result text-center alternate\">");
   html.append("<span class=\"topic\">No results</span><br>");
-  html.append("<span>Maybe you should fix that ;)</span>");
+  html.append("<span>Maybe you should <a href=\"upload.html\">fix that</a></span>");
   return html;
 }

@@ -17,7 +17,6 @@ $(window).keypress(function(e){
 });
 
 function basic_search(){
-  const name=$(".search-bar input[type=text]").val();
-  localStorage.setItem("pending-query",name);
+  localStorage.setItem("pending-query",$(".search-bar input[type=text]").val());
   window.location.href="search.html";
 }
