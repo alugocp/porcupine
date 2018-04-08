@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Porcupine - Edit</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+  <script src="libs/jquery.min.js"></script>
+  <script src="libs/bootstrap.min.js"></script>
+  <script src="libs/mongodb-stitch.min.js"></script>
+  <script src="libs/codemirror.js"></script>
+  <link rel="stylesheet" href="styles/general.css">
+  <link rel="stylesheet" href="styles/upload.css">
+  <link rel="stylesheet" href="libs/codemirror.css">
+  <script src="scripts/setup.js"></script>
+  <script src="scripts/edit.js"></script>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row header"></div>
+    <div class="row">
+      <div class="container upload-field">
+        <div class="row">
+          <div class="col-md-3">
+            <label>Name: </label>
+            <input id="name" type="text"></input><br>
+            <label>Language: </label>
+            <select class="languages"></select><br>
+          </div>
+          <div class="col-md-9">
+            <label>Purpose: </label>
+            <textarea id="purpose"></textarea>
+          </div>
+        </div>
+        <div class="row"><div class="container">
+          <textarea id="codearea"></textarea>
+        </div></div>
+        <div class="row text-center">
+          <span class="upload-button">
+            <label for="save"><h2>Save</h2></label>
+            <input id="save" type="submit" onclick="save()"></input>
+          </span>
+          <span class="upload-button">
+            <label for="delete"><h2>Delete</h2></label>
+            <input id="delete" type="submit" onclick="delete_quill()"></input>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
