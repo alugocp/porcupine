@@ -68,7 +68,7 @@ function new_result(obj,index){
   html.append(middle);
   var right=$("<div class=\"col-md-2 text-right\">");
   right.append($("<img class=\"rating\" src=\"images/"+get_face(obj.score)+".png\"></img><br>"));
-  right.append($("<br><span class=\"topic\">"+(obj.ratings | 0)+" ratings</span>"));
+  right.append($("<br><span class=\"topic\">"+(obj.ratings | 0)+" rating"+((obj.ratings | 0)==1?"":"s")+"</span>"));
   html.append(right);
   return html;
 }
