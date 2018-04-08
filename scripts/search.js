@@ -3,7 +3,7 @@ $(window).ready(function(){
   var query=localStorage.getItem("pending-query");
   if(query!=null && query!=undefined){
     delete localStorage["pending-query"];
-    search({name:query});
+    search(query==""?{}:{name:query});
   }
 });
 
@@ -56,11 +56,17 @@ function populate_results(array){
 function new_result(obj,index){
 	var html=$("<div class=\"row result\">");
   if(index%2==0){html.addClass("alternate");}
-	html.append($("<span class=\"topic\">Name:</span> "+obj.name+"<br>"));
-	html.append($("<span class=\"topic\">Language:</span> "+obj.lang+"<br>"));
-	html.append($("<span class=\"topic\">Purpose:</span> " +obj.purpose+"<br>"));
-  html.append($("<span class=\"topic\">Previews:</span> coming soon<br>"));
-  html.append($("<a onclick=\"view("+index+")\">View</a>"));
+  var left=$("<div class=\"col-md-8\">");
+	left.append($("<span class=\"topic\">Name:</span> "+obj.name+"<br>"));
+	left.append($("<span class=\"topic\">Language:</span> "+obj.lang+"<br>"));
+	left.append($("<span class=\"topic\">Purpose:</span> " +obj.purpose+"<br>"));
+  left.append($("<span class=\"topic\">Previews:</span> coming soon<br>"));
+  left.append($("<a onclick=\"view("+index+")\">View</a>"));
+  html.append(left);
+  var right=$("<div class=\"col-md-4\">");
+  right.append($("<img class=\"rating\" src=\"images/"+get_face(obj.score)+".png\"></img><br>"));
+  right.append($("<span class=\"topic\">"+(obj.ratings | 0)+" ratings</span>"));
+  html.append(right);
   return html;
 }
 function empty_result(){
@@ -68,4 +74,11 @@ function empty_result(){
   html.append("<span class=\"topic\">No results</span><br>");
   html.append("<span>Maybe you should <a href=\"upload.html\">fix that</a></span>");
   return html;
+}
+function get_face(index){
+  if(index==undefined){
+    return "mwuhahaha";
+  }
+  var faces=["mad","meh","average","smiley"];
+  return faces[Math.round(index)];
 }
